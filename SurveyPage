@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+
+        body::before {
+            content:"";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(https://wallpaperaccess.com/full/3124512.jpg);
+            background-size: cover;
+            z-index: -1;
+        
+        }
+        body {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .title {
+            color: black;
+            text-align: center;
+        
+        }
+
+        h1 {
+
+            line-height: 1.2;
+            
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
+        h1, p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            width: 100%;
+            margin: 3.125rem auto 0 auto;
+        }
+
+        .header { 
+            padding: 0 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .description {
+            font-style: italic;
+            color: black;
+            text-shadow: 1px 1px 1px black;
+
+        }
+
+        .clue {
+            margin-left: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        form {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+            padding: 2.5rem 0.5rem;
+            border-radius:0.5rem;
+        }
+
+        .form-group {
+            margin: 0 auto 1.25rem auto;
+            padding: 0.25rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            border: 1px solid;
+            border-radius: 0.25rem;
+        }
+
+        .input-radio, .input-checkbox  {
+            display:inline-block;
+            margin-right: 0.6rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+
+        }
+        
+        .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            resize: vertical;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: yellow;
+            border-radius: 2px;
+            cursor: pointer;
+
+        }
+
+
+
+    </style>
+
+    <head>
+
+    </head>
+
+
+    <body>
+        <div class="container">
+        <header class="header">
+        <h1 class="title" id="title">Thank you for your time!</h1>
+        <p  id="description" class="description">Your time is precious and we know it</p>
+        </header>
+        
+
+        <form id="survey-form">
+            <div class="form-group">
+            <label id="name-label" for="name">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name here" required/>
+            </div>
+
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required/>
+            </div>
+
+            <div class="form-group">
+                <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+                <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age"/>
+            </div>
+        
+
+        <div class="form-group">
+            <p>What is your current role?</p>
+            <select id="dropdown" name="role" class="form-control" reuqired>
+                <option disabled selected value>"Select current role </option>
+                <option value="student">Student</option>
+                <option value="job">Full-time Worker</option>
+                <option value="learner">Full-time Learner</option>
+                <option value="preferNo">Prefer not to say</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <p>Would you reccomend me to a friend?</p>
+            <label>
+                <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked/>Definitely</label>
+
+            <label>
+                <input name="user-recommend" value="maybe" type="radio" class="input-radio"/>Maybe</label>
+            <label>
+                <input name="user-recommend" value="not sure" type="radio" class="input-radio"/>Not sure</label>
+            
+        </div>
+
+
+        <div class="form-group">
+            <p>
+                What is your favorite part of learning programming?
+            </p>
+            <select id="most-like" name="mostLike" class="form-control" required>
+                <option disabled selected value>Select an option</option>
+                <option value="challenges">Challenges</option>
+                <option value="projects">Projects</option>
+                <option value="communitiy">Community</option>
+                <option value="openSource">Open Source</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <p>
+                What would you like to see improved?
+                <span class="clue">(Check all that apply)</span>
+            </p>
+            <label> <input name="prefer" value="code" type="checkbox" class="input-checkbox" />Code is not so clean</label>
+            <label> <input name="prefer" value="design" type="checkbox" class="input-checkbox" />End result just looks ugly</label>
+            <label> <input name="prefer" value="english" type="checkbox" class="input-checkbox" />Your english is not as good as you think</label>
+        </div>
+
+        <div class="form-group">
+            <p>Any comments?</p>
+            <textarea id="comments" class="input-textarea" name="comment" placeholder="Write it here"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">Submit</button>
+        </div>
+
+    </form>
+
+
+    </div>
+    </body>
+
+</html>
